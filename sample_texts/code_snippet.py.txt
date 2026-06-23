@@ -1,0 +1,36 @@
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n - 1)
+ 
+ 
+def fibonacci(n):
+    sequence = []
+    a, b = 0, 1
+    for i in range(n):
+        sequence.append(a)
+        a, b = b, a + b
+    return sequence
+ 
+ 
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+ 
+ 
+def main():
+    print("Factorial of 5:", factorial(5))
+    print("Fibonacci sequence:", fibonacci(10))
+    print("Prime numbers under 20:")
+    for number in range(20):
+        if is_prime(number):
+            print(number)
+ 
+ 
+if __name__ == "__main__":
+    main()
