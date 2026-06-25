@@ -14,12 +14,12 @@ def get_probabilities(frequencies):
 def calculate_entropy(probabilities):
     entropy = 0
     for i in probabilities.values():
-        entropy += -1*(i*m.log2(i))
+        entropy += -1*(i*m.log2(i)) #uses the formula
     return entropy
 
 def find_fixed_bit_length_bits_per_char(frequencies):
     length = len(frequencies)
-    bits_per_char = int(m.ceil(m.log2(length)))
+    bits_per_char = int(m.ceil(m.log2(length))) #rounds up to the nearest power of 2 for bit length
     return bits_per_char
 
 def find_total_fixed_bit_file_size(bits_per_char,content):
